@@ -17,10 +17,20 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
+    'react/jsx-filename-extension': [2, { extensions: ['.tsx', '.ts'] }],
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function' },
     ],
+    'no-restricted-exports': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };
