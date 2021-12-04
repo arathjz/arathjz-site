@@ -23,7 +23,19 @@
     "@types/node": "^16.11.10",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "prettier": "^2.4.1"
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "prettier": "2.5.1",
+    "typescript": "^4.5.2"
   },
   "keywords": [
     "gatsby"
@@ -36,7 +48,17 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint",
+    "lint:init": "eslint --init",
+    "check-types": "tsc --project tsconfig.json --noEmit",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": [
+      "yarn lint",
+      "prettier --write --ignore-unknown"
+    ]
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,5 @@
+.husky/**
+.nvmrc
+.prettierrc.json
+package.json
+yarn.lock
