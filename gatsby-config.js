@@ -17,15 +17,16 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Arath Jimenez`,
-        short_name: `arathjz`,
-        start_url: `/`,
-        display: `standalone`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Arath Jimenez`,
+    //     short_name: `arathjz`,
+    //     start_url: `/`,
+    //     display: `standalone`,
+    //     icon: '',
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
