@@ -24,7 +24,12 @@ module.exports = {
     ],
     'no-restricted-exports': 'off',
     'import/extensions': 'off',
+    'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   settings: {
     'import/resolver': {
