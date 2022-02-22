@@ -1,27 +1,40 @@
 import React, { useMemo, useState } from 'react';
+import { DefaultTheme } from 'styled-components';
 
-import { Theme } from './types';
+import { darkTheme, lightTheme } from '../../styles/theme';
+import { ThemeVariant } from './types';
+
+const THEMES = {
+  [ThemeVariant.Dark]: darkTheme,
+  [ThemeVariant.Light]: lightTheme,
+};
 
 const initialValue = {
-  theme: Theme.Dark,
+  theme: THEMES[ThemeVariant.Dark],
   toggleTheme: () => {},
+  variant: ThemeVariant.Dark,
 };
 
 export const ThemeContext = React.createContext<{
-  theme: Theme;
+  theme: DefaultTheme;
   toggleTheme: () => void;
+  variant: ThemeVariant;
 }>(initialValue);
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState(Theme.Dark);
+  const [variant, setVariant] = useState(ThemeVariant.Dark);
 
   const toggleTheme = () => {
-    const newTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark;
+    const newTheme =
+      variant === ThemeVariant.Dark ? ThemeVariant.Light : ThemeVariant.Dark;
 
-    setTheme(newTheme);
+    setVariant(newTheme);
   };
 
-  const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
+  const value = useMemo(
+    () => ({ theme: THEMES[variant], toggleTheme, variant }),
+    [variant],
+  );
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

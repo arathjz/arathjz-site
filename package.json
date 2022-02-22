@@ -53,7 +53,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "eslint",
     "lint:init": "eslint --init",
-    "check-types": "tsc --project tsconfig.json --noEmit",
     "prepare": "husky install"
   },
   "lint-staged": {

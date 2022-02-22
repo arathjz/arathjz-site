@@ -4,3 +4,6 @@
 package.json
 yarn.lock
 README.md
+**/*.svg
+**/*.png
+**/*.jpeg

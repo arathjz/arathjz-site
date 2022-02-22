@@ -1,4 +1,4 @@
-export enum Theme {
-  Dark,
-  Light,
+export enum ThemeVariant {
+  Dark = 'Dark',
+  Light = 'Light',
 }
