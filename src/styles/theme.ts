@@ -3,6 +3,16 @@ import { Color } from './colors';
 
 const commonTheme = {
   maxWidth: '1440px',
+  fontSize: {
+    mobile: {
+      title: '48px',
+      text: '20px',
+    },
+    regular: {
+      title: '70px',
+      text: '20px',
+    },
+  },
 };
 
 const footer = {

@@ -3,12 +3,12 @@ import * as React from 'react';
 import Layout from '../components/Layout/Layout';
 import Seo from '../components/Seo';
 
+import { MainSection } from '../sections/Main';
+
 const Home = (): JSX.Element => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <MainSection />
   </Layout>
 );
 
