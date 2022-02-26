@@ -33,17 +33,18 @@ export const Footer = () => (
         />
         <Input
           type="text"
+          aria-label="Company"
+          placeholder="Company"
+          name="company"
+        />
+        <Input
+          type="text"
           aria-label="Write something"
           placeholder="Write something"
           name="message"
           required
         />
-        <Input
-          type="text"
-          aria-label="Company"
-          placeholder="Company"
-          name="company"
-        />
+        <input type="text" style={{ visibility: 'hidden' }} />
         <SubmitButton>Contact me</SubmitButton>
       </FormContainer>
     </Content>
