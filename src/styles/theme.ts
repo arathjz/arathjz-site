@@ -6,22 +6,30 @@ const commonTheme = {
   fontSize: {
     mobile: {
       headingOne: '48px',
+      headingTwo: '48px',
       headingThree: '48px',
       text: '24px',
+      smallText: '14px',
+      button: '16px',
+      input: '20px',
     },
     regular: {
-      headingOne: '80px',
+      headingOne: '90px',
+      headingTwo: '48px',
       headingThree: '72px',
       text: '24px',
+      smallText: '14px',
+      button: '16px',
+      input: '20px',
     },
   },
 };
 
 const footer = {
   background: Color.DarkGray,
-  heading: Color.White,
+  primary: Color.White,
   text: Color.DirtyWhite,
-  borderColor: Color.DirtyWhite,
+  borderColor: Color.SoftGray,
 };
 
 export const lightTheme: DefaultTheme = {

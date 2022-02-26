@@ -7,15 +7,20 @@ interface Colors {
   text: string;
   footer: {
     background: string;
-    heading: string;
+    primary: string;
     text: string;
     borderColor: string;
   };
 }
 
 interface BaseFontSize {
-  title: string;
+  headingOne: string;
+  headingTwo: string;
+  headingThree: string;
   text: string;
+  smallText: string;
+  input: string;
+  button: string;
 }
 
 interface FontSize {
