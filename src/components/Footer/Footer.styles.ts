@@ -51,7 +51,7 @@ export const FormContainer = styled.form`
   width: 100%;
   margin-top: 72px;
 
-  input:not(:last-child) {
+  > input {
     margin-bottom: 36px;
   }
 
