@@ -55,6 +55,10 @@ export const FormContainer = styled.form`
     margin-bottom: 48px;
   }
 
+  input:last-of-type {
+    margin: 0;
+  }
+
   @media (min-width: ${device.tablet}) {
     margin-top: 0;
     width: 40%;
