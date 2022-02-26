@@ -3,14 +3,32 @@ import { Link } from 'gatsby';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
 import secondaryAvatar from '../../images/secondary-avatar.svg';
-import darkModeIcon from '../../images/icons/dark-mode.svg';
-import lightModeIcon from '../../images/icons/light-mode.svg';
 import { ThemeVariant } from '../../providers/ThemeProvider/types';
 import { Button } from '../Button';
-import { Container, Content } from './Header.styles';
+import { Container, Content, Nav } from './Header.styles';
+import { useIconMapper } from './useIconMapper';
+
+const SOCIAL_MEDIA = [
+  {
+    icon: 'github',
+    name: 'Github',
+    link: 'https://github.com/arathjz',
+  },
+  {
+    icon: 'linkedin',
+    name: 'LinkeIn',
+    link: 'https://www.linkedin.com/in/arathjz',
+  },
+  {
+    icon: 'twitter',
+    name: 'Twitter',
+    link: 'https://twitter.com/arathjz',
+  },
+];
 
 const Header = () => {
   const { toggleTheme, variant } = React.useContext(ThemeContext);
+  const { toggleMode, ...socialMediaIcons } = useIconMapper(variant);
 
   return (
     <Container>
@@ -20,7 +38,7 @@ const Header = () => {
             <img src={secondaryAvatar} alt="Go home - Website logo" />
           </Link>
         </div>
-        <nav>
+        <Nav>
           <Button
             type="button"
             onClick={toggleTheme}
@@ -30,13 +48,26 @@ const Header = () => {
                 : ThemeVariant.Dark
             }`}
           >
-            <img
-              src={variant === ThemeVariant.Dark ? lightModeIcon : darkModeIcon}
-              alt=""
-              role="presentation"
-            />
+            <img src={toggleMode.publicURL} alt="" role="presentation" />
           </Button>
-        </nav>
+          {SOCIAL_MEDIA.map((item) => (
+            <a
+              key={item.link}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Visit my ${item.name}`}
+            >
+              <img
+                src={socialMediaIcons[item.icon].publicURL}
+                alt=""
+                role="presentation"
+                width={24}
+                height={24}
+              />
+            </a>
+          ))}
+        </Nav>
       </Content>
     </Container>
   );

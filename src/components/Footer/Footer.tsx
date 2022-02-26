@@ -56,6 +56,12 @@ export const Footer = () => (
         All rights reserved
       </p>
       <p>
+        Icons by{' '}
+        <a href="https://simpleicons.org/" target="_blank" rel="noreferrer">
+          Simple Icons
+        </a>
+      </p>
+      <p>
         Designed by
         {` `}
         <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">

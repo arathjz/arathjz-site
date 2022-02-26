@@ -17,3 +17,9 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.maxWidth};
 `;
+
+export const Nav = styled.nav`
+  display: flex;
+  width: 160px;
+  justify-content: space-between;
+`;
