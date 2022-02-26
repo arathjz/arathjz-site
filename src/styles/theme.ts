@@ -5,12 +5,14 @@ const commonTheme = {
   maxWidth: '1440px',
   fontSize: {
     mobile: {
-      title: '48px',
-      text: '20px',
+      headingOne: '48px',
+      headingThree: '48px',
+      text: '24px',
     },
     regular: {
-      title: '70px',
-      text: '20px',
+      headingOne: '80px',
+      headingThree: '72px',
+      text: '24px',
     },
   },
 };

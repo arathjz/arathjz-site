@@ -40,12 +40,12 @@ export const Subsection = styled.div`
 `;
 
 export const HeadingOne = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.mobile.title};
+  font-size: ${({ theme }) => theme.fontSize.mobile.headingThree};
   color: ${({ theme }) => theme.colors.heading};
   margin-bottom: 40px;
 
   @media (min-width: ${device.tablet}) {
-    font-size: ${({ theme }) => theme.fontSize.regular.title};
+    font-size: ${({ theme }) => theme.fontSize.regular.headingThree};
   }
 `;
 
