@@ -14,7 +14,7 @@ export const Footer = () => (
   <Container>
     <Content>
       <LeftContent>
-        <h2>Contact me to talk about your ideas.</h2>
+        <h2>Would you like to chat? Reach out to me!</h2>
       </LeftContent>
       <FormContainer name="contact" method="POST" data-netlify="true">
         <Input
@@ -44,6 +44,7 @@ export const Footer = () => (
           name="message"
           required
         />
+        {/* Have no idea why when deploying to netlify, the last input does not display, so I am adding this dummy input */}
         <input type="text" style={{ visibility: 'hidden' }} />
         <SubmitButton>Contact me</SubmitButton>
       </FormContainer>

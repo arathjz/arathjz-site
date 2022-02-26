@@ -6,10 +6,10 @@ import { Button } from '../Button';
 export const Container = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer.background};
   transition: background-color 0.3s;
-  padding: 72px 36px 0;
+  padding: 72px 48px 0;
 
   @media (min-width: ${device.tablet}) {
-    padding: 140px 36px 0;
+    padding: 140px 48px 0;
   }
 `;
 
@@ -52,7 +52,7 @@ export const FormContainer = styled.form`
   margin-top: 72px;
 
   > input {
-    margin-bottom: 36px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: ${device.tablet}) {
@@ -68,7 +68,6 @@ export const SubmitButton = styled(Button)`
   margin-left: auto;
   background-color: ${({ theme }) => theme.colors.footer.primary};
   color: ${({ theme }) => theme.colors.footer.background};
-  margin-top: 96px;
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 24px;

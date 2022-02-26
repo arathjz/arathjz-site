@@ -5,7 +5,7 @@ import mainAvatarImg from '../../images/main-avatar.svg';
 import { device } from '../../styles/device';
 
 export const Container = styled(BaseContainer)`
-  padding-top: 50px;
+  padding-top: 100px;
 `;
 
 export const Content = styled.div`
@@ -40,12 +40,13 @@ export const Subsection = styled.div`
 `;
 
 export const HeadingOne = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.mobile.headingThree};
+  font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
   color: ${({ theme }) => theme.colors.heading};
+  font-weight: 400;
   margin-bottom: 40px;
 
   @media (min-width: ${device.tablet}) {
-    font-size: ${({ theme }) => theme.fontSize.regular.headingThree};
+    font-size: ${({ theme }) => theme.fontSize.regular.headingTwo};
   }
 `;
 

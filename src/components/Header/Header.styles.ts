@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
   transition: background-color 0.3s;
-  padding: 24px 36px;
+  padding: 24px 48px;
   position: fixed;
   left: 0;
   top: 0;
