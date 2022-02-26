@@ -16,11 +16,34 @@ export const Footer = () => (
       <LeftContent>
         <h2>Contact me to talk about your ideas.</h2>
       </LeftContent>
-      <FormContainer>
-        <Input type="text" label="Your name" />
-        <Input type="email" label="Email" />
-        <Input type="text" label="Company" />
-        <Input type="text" label="Write something" />
+      <FormContainer name="contact" method="POST" data-netlify="true">
+        <Input
+          type="text"
+          aria-label="Your name"
+          placeholder="Your name"
+          name="name"
+          required
+        />
+        <Input
+          type="email"
+          aria-label="Email"
+          placeholder="Email"
+          name="name"
+          required
+        />
+        <Input
+          type="text"
+          aria-label="Company"
+          placeholder="Company"
+          name="company"
+        />
+        <Input
+          type="text"
+          aria-label="Write something"
+          placeholder="Write something"
+          name="message"
+          required
+        />
         <SubmitButton>Contact me</SubmitButton>
       </FormContainer>
     </Content>

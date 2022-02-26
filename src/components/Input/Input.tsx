@@ -1,12 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-interface InputProps {
-  label: string;
-  type: 'email' | 'text';
-}
-
-const StyledInput = styled.input`
+export const Input = styled.input`
   display: block;
   width: 100%;
   background-color: transparent;
@@ -35,7 +29,3 @@ const StyledInput = styled.input`
     font-weight: 400;
   }
 `;
-
-export const Input = ({ type, label }: InputProps) => (
-  <StyledInput type={type} placeholder={label} aria-label={label} />
-);
