@@ -1,7 +1,13 @@
-import styled from 'styled-components';
+import { css } from 'styled-components';
 
-export const BaseContainer = styled.section`
+import { device } from '../../styles/device';
+
+export const BaseContainer = css`
   background-color: ${({ theme }) => theme.colors.primary};
-  padding: 0 48px;
+  padding: 120px 24px;
   transition: background-color 0.3s;
+
+  @media (min-width: ${device.tablet}) {
+    padding: 160px 48px;
+  }
 `;

@@ -6,7 +6,7 @@ import { Button } from '../Button';
 export const Container = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer.background};
   transition: background-color 0.3s;
-  padding: 72px 48px 0;
+  padding: 72px 24px 0;
 
   @media (min-width: ${device.tablet}) {
     padding: 140px 48px 0;
@@ -32,7 +32,7 @@ export const LeftContent = styled.div`
   > h2 {
     font-size: ${({ theme }) => theme.fontSize.mobile.headingOne};
     color: ${({ theme }) => theme.colors.footer.primary};
-    font-weight: 400;
+    font-weight: 500;
     max-width: 600px;
     text-align: center;
   }

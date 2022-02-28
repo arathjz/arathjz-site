@@ -5,18 +5,18 @@ const commonTheme = {
   maxWidth: '1440px',
   fontSize: {
     mobile: {
-      headingOne: '48px',
+      headingOne: '40px',
       headingTwo: '48px',
-      headingThree: '48px',
+      headingThree: '40px',
       text: '24px',
       smallText: '14px',
       button: '16px',
       input: '20px',
     },
     regular: {
-      headingOne: '90px',
-      headingTwo: '80px',
-      headingThree: '72px',
+      headingOne: '80px',
+      headingTwo: '72px',
+      headingThree: '64px',
       text: '24px',
       smallText: '14px',
       button: '16px',

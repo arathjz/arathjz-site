@@ -14,7 +14,7 @@ export const Footer = () => (
   <Container>
     <Content>
       <LeftContent>
-        <h2>Would you like to chat? Reach out to me!</h2>
+        <h2>Would you like to chat? Please get in touch</h2>
       </LeftContent>
       <FormContainer name="contact" method="POST" data-netlify="true">
         <Input
@@ -28,7 +28,7 @@ export const Footer = () => (
           type="email"
           aria-label="Email"
           placeholder="Email"
-          name="name"
+          name="email"
           required
         />
         <Input
@@ -64,7 +64,11 @@ export const Footer = () => (
       <p>
         Designed by
         {` `}
-        <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.behance.net/olivercambrano"
+          target="_blank"
+          rel="noreferrer"
+        >
           Oliver Cambrano
         </a>
       </p>

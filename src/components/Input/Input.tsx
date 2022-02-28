@@ -26,6 +26,6 @@ export const Input = styled.input`
   & {
     color: ${({ theme }) => theme.colors.footer.primary};
     font-size: ${({ theme }) => theme.fontSize.mobile.input};
-    font-weight: 400;
+    font-weight: 500;
   }
 `;
