@@ -75,6 +75,7 @@ export const SubmitButton = styled(Button)`
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 24px;
+  margin-top: 48px;
 `;
 
 export const InfoAndCopyright = styled.div`
