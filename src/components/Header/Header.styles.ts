@@ -10,6 +10,7 @@ export const Container = styled.header`
   left: 0;
   top: 0;
   right: 0;
+  z-index: 99999;
 
   @media (min-width: ${device.tablet}) {
     padding: 24px 48px;
