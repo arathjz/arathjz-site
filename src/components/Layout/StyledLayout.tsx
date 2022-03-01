@@ -8,10 +8,10 @@ const StyledLayout = ({ children }) => {
   const { theme } = React.useContext(ThemeContext);
 
   return (
-    <>
+    <StyledThemeProvider theme={theme}>
       <GlobalStyle />
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
-    </>
+      {children}
+    </StyledThemeProvider>
   );
 };
 

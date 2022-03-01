@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-margin-before: 0;
   }
 
+  html {
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+
   body {
     min-height: 100vh;
     width: 100vw;

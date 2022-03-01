@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
+import { ThemeContext } from '../../providers/ThemeProvider';
 import { Container, Content, Row } from './Organizations.styles';
 import { useOrganizationLogosMapper } from './useOrganizationLogosMapper';
 
@@ -25,15 +26,11 @@ const ORGANIZATIONS = [
     link: 'https://100ladrillos.com/',
     key: 'hundredBricks',
   },
-  {
-    name: 'Blockdemy',
-    link: 'https://www.blockdemy.com/',
-    key: 'blockdemy',
-  },
 ];
 
 export const Organizations = () => {
-  const logos = useOrganizationLogosMapper();
+  const { variant } = React.useContext(ThemeContext);
+  const logos = useOrganizationLogosMapper(variant);
 
   return (
     <Container>

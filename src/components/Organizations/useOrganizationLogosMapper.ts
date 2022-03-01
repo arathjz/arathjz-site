@@ -1,24 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-export const useOrganizationLogosMapper = () => {
+import { ThemeVariant } from '../../providers/ThemeProvider/types';
+
+export const useOrganizationLogosMapper = (variant: ThemeVariant) => {
   const data = useStaticQuery(graphql`
     {
-      shiphero: file(relativePath: { eq: "companies/shiphero.png" }) {
-        childImageSharp {
-          fixed(width: 250) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      codelitt: file(relativePath: { eq: "companies/codelitt.png" }) {
-        childImageSharp {
-          fixed(width: 200) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      debtCollective: file(
-        relativePath: { eq: "companies/debt-collective.png" }
+      shiphero_light: file(
+        relativePath: { eq: "companies/light/shiphero.png" }
       ) {
         childImageSharp {
           fixed(width: 250) {
@@ -26,22 +14,74 @@ export const useOrganizationLogosMapper = () => {
           }
         }
       }
-      hundredBricks: file(relativePath: { eq: "companies/100ladrillos.png" }) {
+      codelitt_light: file(
+        relativePath: { eq: "companies/light/codelitt.png" }
+      ) {
+        childImageSharp {
+          fixed(width: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      debtCollective_light: file(
+        relativePath: { eq: "companies/light/debt-collective.png" }
+      ) {
         childImageSharp {
           fixed(width: 250) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      blockdemy: file(relativePath: { eq: "companies/blockdemy.png" }) {
+      hundredBricks_light: file(
+        relativePath: { eq: "companies/light/100ladrillos.png" }
+      ) {
         childImageSharp {
           fixed(width: 250) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      shiphero_dark: file(relativePath: { eq: "companies/dark/shiphero.png" }) {
+        childImageSharp {
+          fixed(width: 160) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      codelitt_dark: file(relativePath: { eq: "companies/dark/codelitt.png" }) {
+        childImageSharp {
+          fixed(width: 200) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      debtCollective_dark: file(
+        relativePath: { eq: "companies/dark/debt-collective.png" }
+      ) {
+        childImageSharp {
+          fixed(width: 160) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      hundredBricks_dark: file(
+        relativePath: { eq: "companies/dark/100ladrillos.png" }
+      ) {
+        childImageSharp {
+          fixed(width: 160) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `);
+  const oppositeVariant =
+    variant === ThemeVariant.Dark ? ThemeVariant.Light : ThemeVariant.Dark;
 
-  return data;
+  return {
+    shiphero: data[`shiphero_${oppositeVariant}`],
+    codelitt: data[`codelitt_${oppositeVariant}`],
+    debtCollective: data[`debtCollective_${oppositeVariant}`],
+    hundredBricks: data[`hundredBricks_${oppositeVariant}`],
+  };
 };
