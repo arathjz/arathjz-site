@@ -45,7 +45,11 @@ export const Footer = () => (
           required
         />
         {/* Have no idea why when deploying to netlify, the last input does not display, so I am adding this dummy input */}
-        <input type="text" style={{ visibility: 'hidden' }} />
+        <input
+          type="text"
+          aria-hidden="true"
+          style={{ visibility: 'hidden' }}
+        />
         <SubmitButton>Contact me</SubmitButton>
       </FormContainer>
     </Content>

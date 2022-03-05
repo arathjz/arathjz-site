@@ -15,7 +15,7 @@ const commonTheme = {
     },
     regular: {
       headingOne: '80px',
-      headingTwo: '72px',
+      headingTwo: '48px',
       headingThree: '64px',
       text: '24px',
       smallText: '14px',

@@ -2,17 +2,22 @@ import styled from 'styled-components';
 import { BaseContainer } from '../../components/BaseContainer';
 
 import mainAvatarImg from '../../images/main-avatar.svg';
+import { RoundedLink } from '../../components/Button';
 import { device } from '../../styles/device';
 
 export const Container = styled.section`
   ${BaseContainer}
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 `;
 
 export const Content = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media (min-width: ${device.tablet}) {
     flex-direction: row;
@@ -28,12 +33,12 @@ export const Subsection = styled.div`
 
   @media (min-width: ${device.tablet}) {
     &:first-of-type {
-      margin-left: 50px;
-      width: 60%;
+      margin-left: 100px;
+      flex: 1;
     }
 
     &:last-of-type {
-      width: 40%;
+      flex: 1;
     }
   }
 `;
@@ -41,8 +46,7 @@ export const Subsection = styled.div`
 export const HeadingOne = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
   color: ${({ theme }) => theme.colors.heading};
-  font-weight: 500;
-  margin-bottom: 40px;
+  font-weight: 400;
 
   @media (min-width: ${device.tablet}) {
     font-size: ${({ theme }) => theme.fontSize.regular.headingTwo};
@@ -56,6 +60,10 @@ export const Text = styled.p`
   @media (min-width: ${device.tablet}) {
     font-size: ${({ theme }) => theme.fontSize.regular.text};
   }
+`;
+
+export const AboutMeButton = styled(RoundedLink)`
+  margin-top: 48px;
 `;
 
 export const AvatarImage = styled.img.attrs(() => ({

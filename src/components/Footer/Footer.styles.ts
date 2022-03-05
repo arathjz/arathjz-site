@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { device } from '../../styles/device';
-import { Button } from '../Button';
+import { RoundedButton } from '../Button';
 
 export const Container = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer.background};
@@ -59,22 +59,20 @@ export const FormContainer = styled.form`
     margin: 0;
   }
 
+  input[aria-hidden='true'] {
+    height: 1px;
+  }
+
   @media (min-width: ${device.tablet}) {
     margin-top: 0;
     width: 40%;
   }
 `;
 
-export const SubmitButton = styled(Button)`
-  background-color: red;
+export const SubmitButton = styled(RoundedButton)`
   display: block;
   padding: 16px 24px;
   margin-left: auto;
-  background-color: ${({ theme }) => theme.colors.footer.primary};
-  color: ${({ theme }) => theme.colors.footer.background};
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 24px;
   margin-top: 48px;
 `;
 
