@@ -6,7 +6,7 @@ const commonTheme = {
   fontSize: {
     mobile: {
       headingOne: '40px',
-      headingTwo: '48px',
+      headingTwo: '32px',
       headingThree: '40px',
       text: '24px',
       smallText: '14px',

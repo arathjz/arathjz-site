@@ -14,7 +14,7 @@ export const MainSection = () => (
     <Content>
       <Subsection>
         <HeadingOne>
-          Hello! I am Arath. I am a software engineer passionate about providing
+          I am Arath. I am a software engineer passionate about providing
           solutions with technology
         </HeadingOne>
         <AboutMeButton href="#about-me">Learn more about me</AboutMeButton>
