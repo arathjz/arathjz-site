@@ -5,7 +5,7 @@ import { ThemeContext } from '../../providers/ThemeProvider';
 import secondaryAvatar from '../../images/secondary-avatar.svg';
 import { ThemeVariant } from '../../providers/ThemeProvider/types';
 import { Button } from '../Button';
-import { Container, Content, Nav } from './Header.styles';
+import { Container, Content, SocialMedia } from './Header.styles';
 import { useIconMapper } from './useIconMapper';
 
 const SOCIAL_MEDIA = [
@@ -38,7 +38,7 @@ const Header = () => {
             <img src={secondaryAvatar} alt="Go home - Website logo" />
           </Link>
         </div>
-        <Nav>
+        <SocialMedia>
           <Button
             type="button"
             onClick={toggleTheme}
@@ -67,7 +67,7 @@ const Header = () => {
               />
             </a>
           ))}
-        </Nav>
+        </SocialMedia>
       </Content>
     </Container>
   );

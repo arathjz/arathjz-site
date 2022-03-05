@@ -25,7 +25,7 @@ export const Content = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
 `;
 
-export const Nav = styled.nav`
+export const SocialMedia = styled.div`
   display: flex;
   width: 160px;
   justify-content: space-between;
