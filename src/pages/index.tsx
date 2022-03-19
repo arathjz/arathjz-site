@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import { Layout } from '../components/Layout/Layout';
-import { Organizations } from '../components/Organizations';
 import Seo from '../components/Seo';
 
+import { Organizations } from '../sections/Organizations';
 import { MainSection } from '../sections/Main';
 
 const Home = (): JSX.Element => (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BaseContainer } from '../BaseContainer';
+import { BaseContainer } from '../../components/BaseContainer';
 import { device } from '../../styles/device';
 
 export const Container = styled.section`

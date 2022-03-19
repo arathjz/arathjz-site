@@ -33,8 +33,8 @@ export const Footer = () => (
         />
         <Input
           type="text"
-          aria-label="Company"
-          placeholder="Company"
+          aria-label="Company (optional)"
+          placeholder="Company (optional)"
           name="company"
         />
         <Input
