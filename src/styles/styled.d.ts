@@ -14,9 +14,9 @@ interface Colors {
 }
 
 interface BaseFontSize {
+  footerHeading: string;
   headingOne: string;
   headingTwo: string;
-  headingThree: string;
   text: string;
   smallText: string;
   input: string;

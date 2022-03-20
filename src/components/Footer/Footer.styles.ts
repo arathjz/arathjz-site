@@ -30,7 +30,7 @@ export const LeftContent = styled.div`
   width: 100%;
 
   > h2 {
-    font-size: ${({ theme }) => theme.fontSize.mobile.headingOne};
+    font-size: ${({ theme }) => theme.fontSize.mobile.footerHeading};
     color: ${({ theme }) => theme.colors.footer.primary};
     font-weight: 500;
     max-width: 600px;
@@ -41,7 +41,7 @@ export const LeftContent = styled.div`
     width: 60%;
 
     > h2 {
-      font-size: ${({ theme }) => theme.fontSize.regular.headingOne};
+      font-size: ${({ theme }) => theme.fontSize.regular.footerHeading};
       text-align: left;
     }
   }

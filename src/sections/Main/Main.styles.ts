@@ -51,25 +51,6 @@ export const Subsection = styled.div`
   }
 `;
 
-export const HeadingOne = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
-  color: ${({ theme }) => theme.colors.heading};
-  font-weight: 400;
-
-  @media (min-width: ${device.tablet}) {
-    font-size: ${({ theme }) => theme.fontSize.regular.headingTwo};
-  }
-`;
-
-export const Text = styled.p`
-  color: ${({ theme }) => theme.colors.text};
-  font-size: ${({ theme }) => theme.fontSize.mobile.text};
-
-  @media (min-width: ${device.tablet}) {
-    font-size: ${({ theme }) => theme.fontSize.regular.text};
-  }
-`;
-
 export const AboutMeButton = styled(RoundedLink)`
   margin-top: 48px;
 `;

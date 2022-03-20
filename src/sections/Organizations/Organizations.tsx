@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
+import { Text } from '../../components/Text';
 import { Container, Content, Row } from './Organizations.styles';
 import { useOrganizationLogosMapper } from './useOrganizationLogosMapper';
 
@@ -35,9 +36,9 @@ export const Organizations = () => {
   return (
     <Container>
       <Content>
-        <h2>
+        <Text variant="headingTwo">
           Organizations I have <br /> collaborated with
-        </h2>
+        </Text>
       </Content>
       <Row>
         {ORGANIZATIONS.map(({ link, key, name }) => (

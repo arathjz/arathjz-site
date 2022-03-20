@@ -18,26 +18,26 @@ export const Container = styled.section`
 export const Content = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-`;
 
-export const Row = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 64px;
+  h2 {
+    text-align: center;
+    font-weight: 500;
+    margin: auto;
+    font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
+    color: ${({ theme }) => theme.colors.heading};
+  }
 
-  a:not(:last-child) {
-    margin-bottom: 48px;
+  h2 br {
+    display: none;
   }
 
   @media (min-width: ${device.tablet}) {
-    flex-direction: row;
-    margin-top: 96px;
+    h2 {
+      font-size: ${({ theme }) => theme.fontSize.regular.headingTwo};
+    }
 
-    a:not(:last-child) {
-      margin-right: 64px;
-      margin-bottom: 0;
+    h2 br {
+      display: block;
     }
   }
 `;

@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { Text } from '../../components/Text';
 import {
   AvatarImage,
   Container,
   Content,
-  HeadingOne,
   Subsection,
   AboutMeButton,
 } from './Main.styles';
@@ -13,10 +13,10 @@ export const MainSection = () => (
   <Container>
     <Content>
       <Subsection>
-        <HeadingOne>
+        <Text variant="headingOne">
           I am Arath. I am a software engineer passionate about providing
           solutions with technology
-        </HeadingOne>
+        </Text>
         <AboutMeButton href="#about-me">Learn more about me</AboutMeButton>
       </Subsection>
       <Subsection>
