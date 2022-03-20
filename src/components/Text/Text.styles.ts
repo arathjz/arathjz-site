@@ -15,7 +15,7 @@ export const HeadingOne = styled.h1`
 export const HeadingTwo = styled.h2`
   text-align: center;
   font-weight: 500;
-  margin: auto;
+  margin: 0 auto 36px;
   font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
   color: ${({ theme }) => theme.colors.heading};
 
@@ -38,5 +38,9 @@ export const Paragraph = styled.p`
 
   @media (min-width: ${device.tablet}) {
     font-size: ${({ theme }) => theme.fontSize.regular.text};
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 16px;
   }
 `;

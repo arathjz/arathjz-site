@@ -8,6 +8,6 @@ export const BaseContainer = css`
   transition: background-color 0.3s;
 
   @media (min-width: ${device.tablet}) {
-    padding: 160px 48px;
+    padding: 144px 48px;
   }
 `;

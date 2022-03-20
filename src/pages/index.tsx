@@ -10,8 +10,8 @@ import { AboutMe } from '../sections/AboutMe';
 const Home = (): JSX.Element => (
   <Layout>
     <Seo title="Home" />
-    <AboutMe />
     <MainSection />
+    <AboutMe />
     <Organizations />
   </Layout>
 );

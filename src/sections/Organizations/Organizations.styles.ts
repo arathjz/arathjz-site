@@ -5,7 +5,6 @@ import { device } from '../../styles/device';
 
 export const Container = styled.section`
   ${BaseContainer}
-  background-color: ${({ theme }) => theme.colors.secondary};
   padding-top: 80px;
   padding-bottom: 80px;
 
