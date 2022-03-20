@@ -18,7 +18,7 @@ export const AboutMe = () => {
       <Content>
         <Text variant="headingTwo">About me</Text>
         <ImageContainer>
-          <Img fixed={mainImage.childImageSharp.fixed} />
+          <Img fixed={mainImage.childImageSharp.fixed} aria-hidden="true" />
         </ImageContainer>
         <TextContainer>
           <Text variant="paragraph">

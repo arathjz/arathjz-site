@@ -9,8 +9,8 @@ export const Container = styled.section`
   padding-bottom: 80px;
 
   @media (min-width: ${device.tablet}) {
-    padding-top: 144px;
-    padding-bottom: 144px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 `;
 

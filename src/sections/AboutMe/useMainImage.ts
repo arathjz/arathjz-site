@@ -5,7 +5,7 @@ export const useMainImage = () => {
     {
       mainImage: file(relativePath: { eq: "main-picture.jpeg" }) {
         childImageSharp {
-          fixed(width: 350) {
+          fixed(width: 330) {
             ...GatsbyImageSharpFixed
           }
         }

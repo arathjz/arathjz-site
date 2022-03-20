@@ -16,9 +16,8 @@ export const ImageContainer = styled.div`
   height: 480px;
   overflow: hidden;
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto 48px;
   border-radius: 48px;
-  margin-bottom: 48px;
 `;
 
 export const TextContainer = styled.div`

@@ -15,7 +15,7 @@ export const HeadingOne = styled.h1`
 export const HeadingTwo = styled.h2`
   text-align: center;
   font-weight: 500;
-  margin: 0 auto 36px;
+  margin: 0 auto 48px;
   font-size: ${({ theme }) => theme.fontSize.mobile.headingTwo};
   color: ${({ theme }) => theme.colors.heading};
 
