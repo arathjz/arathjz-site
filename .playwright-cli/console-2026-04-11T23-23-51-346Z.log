@@ -1,0 +1,48 @@
+[      47ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:21548
+[   49701ms] ReferenceError: handleSubmit is not defined
+    at App (http://localhost:3000/src/App.tsx?t=1775949880970:331:25)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:11546:26)
+    at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:14924:21)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3697:24)
+    at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3731:39)
+    at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19763:15)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19196:20)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19135:13)
+[   49703ms] ReferenceError: handleSubmit is not defined
+    at App (http://localhost:3000/src/App.tsx?t=1775949880970:331:25)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:11546:26)
+    at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:14924:21)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:15912:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3697:24)
+    at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:3731:39)
+    at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19763:15)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19196:20)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19135:13)
+[   49704ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:3000/src/App.tsx?t=1775949880970:331:25)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:14029
+[   49705ms] ReferenceError: handleSubmit is not defined
+    at App (http://localhost:3000/src/App.tsx?t=1775949880970:331:25)
+    at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:11546:26)
+    at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:14924:21)
+    at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:15912:22)
+    at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19751:22)
+    at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19196:20)
+    at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19135:13)
+    at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:19114:15)
+    at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:18734:28)
+    at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=732a75a3:18877:28)
+[   98330ms] [ERROR] WebSocket connection to 'ws://localhost:3000/?token=lYHMfGunhttd' failed:  @ http://localhost:3000/@vite/client:535
+[   98331ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[   99380ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[  100384ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[  101388ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[  102391ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[  103394ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[  104954ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/node_modules/.vite/deps/chunk-V2JXGMUL.js?v=3a199e7d:21548

@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── CANVAS / SURFACE ───────────────────────────── */
+    --color-canvas: #0d0d0d;
+    --color-surface: #1a1a1a;
+    --color-hairline: #1c1c1c;
+
+    /* ── INK (text) ──────────────────────────────────── */
+    --color-ink: #f2ead8;
+    --color-ink-soft: #dccfb5;
+    --color-ink-faint: #bdb098;
+    --color-ink-mute: #cfcfcf;
+    --color-ink-dim: #968a78;
+
+    /* ── ACCENT / BRAND ─────────────────────────────── */
+    --color-accent: #f0b648;
+    --color-accent-hover: #ffcb6a;
+    --color-terminal: #6ee29a;
+
+    /* ── LINES / BORDERS ────────────────────────────── */
+    --color-line: #4a4a4a;
+    --color-line-dim: #5a5a5a;
+    --color-line-hover: #8a8a8a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* ── TYPOGRAPHY TOKENS ──────────────────────────── */
+  .t-display {
+    @apply font-mono font-bold leading-[1.05] text-ink;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+  }
+
+  .t-headline {
+    @apply font-serif text-3xl md:text-4xl text-ink leading-snug;
+  }
+
+  .t-lead {
+    @apply font-serif text-lg md:text-xl text-ink-soft leading-relaxed;
+  }
+
+  .t-body {
+    @apply font-serif text-lg text-ink-soft leading-relaxed;
+  }
+
+  .t-label {
+    @apply font-mono text-xs uppercase tracking-widest;
+  }
+
+  .t-section-label {
+    @apply t-label text-terminal opacity-80;
+  }
+
+  .t-prompt {
+    @apply font-mono text-sm text-terminal;
+  }
+
+  .t-nav {
+    @apply font-mono text-sm tracking-wide transition-colors;
+  }
+
+  .t-caption {
+    @apply font-mono text-xs text-ink-faint;
+  }
+
+  /* ── COMPONENT TOKENS ───────────────────────────── */
+  .btn-primary {
+    @apply font-mono text-xs border-2 border-accent text-accent px-7 py-3.5 uppercase tracking-widest
+           hover:bg-accent hover:text-canvas transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply font-mono text-xs border-2 border-line-dim text-ink-mute px-7 py-3.5 uppercase tracking-widest
+           hover:border-line-hover hover:text-ink transition-colors duration-200;
+  }
+
+  .divider {
+    @apply w-full h-px bg-hairline mb-20;
+  }
+
+  .page-container {
+    @apply px-6 md:px-12 lg:px-28 max-w-7xl mx-auto;
+  }
+
+  .section-pad {
+    @apply py-28 md:py-36;
+  }
+
+  /* ── ANIMATIONS ─────────────────────────────────── */
+  .fade-in-up {
+    @apply opacity-0 animate-fade-up animation-fill-forwards;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-fill-forwards { animation-fill-mode: forwards; }
+}

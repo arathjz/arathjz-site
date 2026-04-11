@@ -1,0 +1,87 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "~/arathjz" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e6]:
+      - link "GitHub" [ref=e7] [cursor=pointer]:
+        - /url: https://github.com/arathjz
+        - img "GitHub" [ref=e8]
+      - link "LinkedIn" [ref=e9] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/arathjz
+        - img "LinkedIn" [ref=e10]
+      - link "Twitter" [ref=e11] [cursor=pointer]:
+        - /url: https://twitter.com/arathjz
+        - img "Twitter" [ref=e12]
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - paragraph [ref=e15]: $ whoami
+      - heading "Arath.▌" [level=1] [ref=e16]
+      - paragraph [ref=e17]:
+        - text: Software engineer. Finance enthusiast.
+        - text: Coffee obsessed — yes, I have the tattoos.
+      - generic [ref=e18]:
+        - link "about me" [ref=e19] [cursor=pointer]:
+          - /url: "#about"
+        - link "get in touch" [ref=e20] [cursor=pointer]:
+          - /url: "#contact"
+    - generic [ref=e21]:
+      - paragraph [ref=e23]: // 01 — about
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "I build things with care and intention." [level=2] [ref=e26]:
+            - text: I build things with care
+            - text: and intention.
+          - paragraph [ref=e27]: I build software, am a finance enthusiast, and love coffee (I even have coffee tattoos). I work mainly with frontend applications, but I have experience as a full-stack engineer.
+          - paragraph [ref=e28]: I believe that every application should be easy to use and accessible to anyone, which leads me to put special care into user experience, accessibility, and design.
+        - img "Arath Jimenez" [ref=e30]
+    - generic [ref=e31]:
+      - paragraph [ref=e33]: // 02 — work
+      - heading "Organizations I've collaborated with" [level=2] [ref=e34]:
+        - text: Organizations I've
+        - text: collaborated with
+      - generic [ref=e35]:
+        - link "ShipHero" [ref=e36] [cursor=pointer]:
+          - /url: https://shiphero.com/
+          - img "ShipHero" [ref=e37]
+        - link "Codelitt" [ref=e38] [cursor=pointer]:
+          - /url: https://www.codelitt.com/
+          - img "Codelitt" [ref=e39]
+        - link "Debt Collective" [ref=e40] [cursor=pointer]:
+          - /url: https://debtcollective.org/
+          - img "Debt Collective" [ref=e41]
+        - link "100 Ladrillos" [ref=e42] [cursor=pointer]:
+          - /url: https://100ladrillos.com/
+          - img "100 Ladrillos" [ref=e43]
+    - generic [ref=e44]:
+      - paragraph [ref=e46]: // 03 — contact
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - heading "Would you like to chat?" [level=2] [ref=e49]:
+            - text: Would you like
+            - text: to chat?
+          - paragraph [ref=e50]: Get in touch.
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: Name *
+            - textbox "Name *" [ref=e54]:
+              - /placeholder: Your name
+          - generic [ref=e55]:
+            - generic [ref=e56]: Email *
+            - textbox "Email *" [ref=e57]:
+              - /placeholder: your@email.com
+          - generic [ref=e58]:
+            - generic [ref=e59]: Company
+            - textbox "Company" [ref=e60]:
+              - /placeholder: Company (optional)
+          - generic [ref=e61]:
+            - generic [ref=e62]: Message *
+            - textbox "Message *" [ref=e63]:
+              - /placeholder: What's on your mind?
+          - button "send message" [ref=e64] [cursor=pointer]
+  - contentinfo [ref=e65]:
+    - generic [ref=e66]:
+      - generic [ref=e67]: © 2026 Arath Jimenez. All rights reserved.
+      - generic [ref=e68]:
+        - text: Icons by
+        - link "Simple Icons" [ref=e69] [cursor=pointer]:
+          - /url: https://simpleicons.org/
