@@ -3,3 +3,7 @@ dist
 .DS_Store
 .playwright-cli
 docs/
+
+# Remix
+/build
+.cache
