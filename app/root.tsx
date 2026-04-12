@@ -36,7 +36,7 @@ export const meta: MetaFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,7 +48,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var s=localStorage.getItem('theme');if(s==='light'||(!s&&window.matchMedia('(prefers-color-scheme: light)').matches)){document.documentElement.classList.add('light')}})()`,
@@ -63,6 +63,12 @@ export default function App() {
               ~/arathjz
             </Link>
             <nav className="flex items-center gap-5">
+              <Link
+                to="/about"
+                className="t-nav text-ink-soft hover:text-ink transition-colors"
+              >
+                about
+              </Link>
               <Link
                 to="/blog"
                 className="t-nav text-ink-soft hover:text-ink transition-colors"

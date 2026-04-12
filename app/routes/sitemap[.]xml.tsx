@@ -6,6 +6,7 @@ export async function loader() {
 
   const urls = [
     { loc: baseUrl, priority: "1.0" },
+    { loc: `${baseUrl}/about`, priority: "0.8" },
     { loc: `${baseUrl}/blog`, priority: "0.8" },
     ...posts.map((post) => ({
       loc: `${baseUrl}/blog/${post.slug}`,

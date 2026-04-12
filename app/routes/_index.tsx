@@ -1,4 +1,4 @@
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 import { getRecentPosts } from "~/lib/posts.server";
 import RecentPosts from "~/components/RecentPosts";
 
@@ -29,14 +29,17 @@ export default function Home() {
         <span className="text-accent">Software engineer</span>. Finance
         enthusiast.
         <br />
-        Powered by espresso <span className="text-accent">☕</span>
+        Powered by coffee <span className="text-accent">☕</span>
       </p>
 
       <div className="max-w-xl space-y-5 mb-10 fade-in-up animation-delay-400">
         <p className="t-body">
-          Hi! I&apos;m Arath, a software engineer with 7+ years in the industry.
-          I&apos;m a <span className="text-accent">generalist</span> who loves
-          solving problems and learning new things.
+          Hi! I&apos;m Arath, a software engineer who believes great
+          software starts with{" "}
+          <span className="text-accent">understanding the problem</span> —
+          not the code. I love digging into the business side, listening to
+          users, and turning that into technology that actually makes their
+          lives easier.
         </p>
         <p className="t-body">
           Currently an Engineering Manager at{" "}
@@ -48,13 +51,20 @@ export default function Home() {
           >
             Keep
           </a>
-          , leading the Capital team. I believe technology should be easy and
-          accessible for everyone, which fuels my focus on user experience,
-          accessibility, and design in every project.
+          , leading the Capital team.
+        </p>
+        <p className="t-body">
+          <Link
+            to="/about"
+            className="text-ink-faint hover:text-accent transition-colors text-sm font-mono"
+          >
+            more about me &rarr;
+          </Link>
         </p>
       </div>
 
       <div className="fade-in-up animation-delay-500">
+        <p className="font-mono text-sm text-ink-faint mb-4">get in touch</p>
         <a
           href={`mailto:${EMAIL}`}
           className="font-mono text-lg md:text-xl text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-2 group"
