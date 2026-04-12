@@ -1,70 +1,66 @@
 import { readdir, readFile, mkdir, writeFile } from 'fs/promises'
 import { join, resolve } from 'path'
-import { createServer } from 'http'
-import { readFileSync } from 'fs'
-import puppeteer from 'puppeteer'
+import fm from 'front-matter'
 
 const DIST = resolve('dist')
 const CONTENT_DIR = resolve('content/blog')
 
-async function getBlogSlugs() {
+async function getBlogPosts() {
   const files = await readdir(CONTENT_DIR)
-  const slugs = []
+  const posts = []
   for (const file of files) {
     if (!file.endsWith('.md')) continue
     const raw = await readFile(join(CONTENT_DIR, file), 'utf-8')
-    const match = raw.match(/^slug:\s*(.+)$/m)
-    if (match) slugs.push(match[1].trim())
+    const { attributes } = fm(raw)
+    posts.push(attributes)
   }
-  return slugs
+  return posts
 }
 
-function serveStatic(dir, port) {
-  return new Promise((resolvePromise) => {
-    const server = createServer((req, res) => {
-      let filePath = join(dir, req.url === '/' ? 'index.html' : req.url)
-      try {
-        const data = readFileSync(filePath)
-        const ext = filePath.split('.').pop()
-        const types = { html: 'text/html', js: 'application/javascript', css: 'text/css', png: 'image/png', svg: 'image/svg+xml', json: 'application/json' }
-        res.setHeader('Content-Type', types[ext] || 'application/octet-stream')
-        res.end(data)
-      } catch {
-        const html = readFileSync(join(dir, 'index.html'))
-        res.setHeader('Content-Type', 'text/html')
-        res.end(html)
-      }
-    })
-    server.listen(port, () => resolvePromise(server))
-  })
+function injectMeta(html, { title, description }) {
+  return html
+    .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+    .replace(
+      /<meta name="description" content="[^"]*"\s*\/?>/,
+      `<meta name="description" content="${description}" />`
+    )
+    .replace(
+      /<meta property="og:title" content="[^"]*"\s*\/?>/,
+      `<meta property="og:title" content="${title}" />`
+    )
+    .replace(
+      /<meta property="og:description" content="[^"]*"\s*\/?>/,
+      `<meta property="og:description" content="${description}" />`
+    )
 }
 
 async function prerender() {
-  const port = 4173
-  const server = await serveStatic(DIST, port)
+  const baseHtml = await readFile(join(DIST, 'index.html'), 'utf-8')
+  const posts = await getBlogPosts()
 
-  const browser = await puppeteer.launch({ headless: true })
-  const page = await browser.newPage()
-
-  const slugs = await getBlogSlugs()
-  const routes = ['/', ...slugs.map(s => `/blog/${s}`)]
+  const routes = [
+    {
+      path: '/blog',
+      title: 'Blog — Arath Jimenez',
+      description: 'Posts on software engineering, AI, and more.',
+    },
+    ...posts.map((p) => ({
+      path: `/blog/${p.slug}`,
+      title: `${p.title} — Arath Jimenez`,
+      description: p.description,
+    })),
+  ]
 
   console.log(`Prerendering ${routes.length} routes...`)
 
   for (const route of routes) {
-    await page.goto(`http://localhost:${port}${route}`, { waitUntil: 'networkidle0' })
-
-    const html = await page.content()
-
-    const dir = route === '/' ? DIST : join(DIST, ...route.split('/').filter(Boolean))
+    const html = injectMeta(baseHtml, route)
+    const dir = join(DIST, ...route.path.split('/').filter(Boolean))
     await mkdir(dir, { recursive: true })
-    const outFile = route === '/' ? join(DIST, 'index.html') : join(dir, 'index.html')
-    await writeFile(outFile, html)
-    console.log(`  ✓ ${route}`)
+    await writeFile(join(dir, 'index.html'), html)
+    console.log(`  ✓ ${route.path}`)
   }
 
-  await browser.close()
-  server.close()
   console.log('Done!')
 }
 
