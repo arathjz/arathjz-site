@@ -5,8 +5,10 @@ import {
   Scripts,
   ScrollRestoration,
   Link,
+  useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import ThemeToggle from "~/components/ThemeToggle";
 import stylesheet from "~/index.css?url";
 
@@ -34,7 +36,14 @@ export const meta: MetaFunction = () => [
   },
 ];
 
+export async function loader() {
+  return json({
+    gaTrackingId: process.env.GA_TRACKING_ID ?? "",
+  });
+}
+
 export default function App() {
+  const { gaTrackingId } = useLoaderData<typeof loader>();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -45,6 +54,19 @@ export default function App() {
           type="image/svg+xml"
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d0d0d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='%23e8a838'%3Ea.%3C/text%3E%3C/svg%3E"
         />
+        {gaTrackingId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaTrackingId}');`,
+              }}
+            />
+          </>
+        )}
         <Meta />
         <Links />
       </head>
