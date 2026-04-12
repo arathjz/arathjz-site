@@ -58,7 +58,7 @@ const experience = [
         period: "Oct 2023–Nov 2024",
         current: false,
         description:
-          "Drove architecture improvements across multiple teams, introduced RFCs and planning processes, and designed UI guidelines and design tokens later adopted as company-wide standards.",
+          "Drove architecture improvements across multiple teams and designed UI guidelines and design tokens later adopted as company-wide standards.",
       },
     ],
   },
