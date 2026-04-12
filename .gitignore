@@ -7,3 +7,7 @@ docs/
 # Remix
 /build
 .cache
+
+# Local Netlify folder
+.netlify
+deno.lock

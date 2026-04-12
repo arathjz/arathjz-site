@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm run build"
+  publish = ".netlify"
+
+[dev]
+  command = "remix vite:dev"
+  targetPort = 5173

@@ -4,15 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "remix vite:dev",
+    "dev": "netlify dev",
     "build": "remix vite:build",
-    "start": "remix-serve ./build/server/index.js",
-    "preview": "remix vite:build && remix-serve ./build/server/index.js"
+    "start": "netlify serve",
+    "preview": "remix vite:build && netlify serve"
   },
   "dependencies": {
     "@remix-run/node": "^2.17.4",
     "@remix-run/react": "^2.17.4",
-    "@remix-run/serve": "^2.17.4",
     "front-matter": "^4.0.2",
     "isbot": "^4",
     "react": "^18.3.1",
