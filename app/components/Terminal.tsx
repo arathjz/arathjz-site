@@ -15,14 +15,13 @@ const PAGES: Record<string, string> = {
 const FILES = ["about.md", "blog/", "contact.txt", ".secret"];
 
 const NEOFETCH = [
-  "       ___       arath@web",
-  "      /   \\      ----------",
-  "     | a.  |     OS: arathjz.com",
-  "      \\___/      Role: Engineering Manager",
-  "     /     \\     Stack: React, TypeScript, Remix",
-  "    / coffee \\   Shell: zsh + vim motions",
-  "   /___________\\  Uptime: since 2018",
-  "                  Coffee: ☕☕☕☕☕",
+  "    ( (          arath@web",
+  "     ) )         ----------",
+  "  ._______.      OS: arathjz.com",
+  "  |       |]     Role: Software Engineer",
+  "  |  a.   |      Shell: ghostty",
+  "  |_______|      Uptime: since 2018",
+  "    \\_____/      Coffee: ☕☕☕☕☕",
 ].join("\n");
 
 interface Line {
