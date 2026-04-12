@@ -4,30 +4,22 @@ const EMAIL = 'me@arathjz.com'
 
 export default function Home() {
   return (
-    <div className="min-h-[calc(100vh-73px)] flex flex-col justify-center page-container pt-20 pb-16">
+    <div className="flex-1 flex flex-col justify-center page-container pt-20 pb-8">
       <p className="t-prompt mb-7 fade-in-up animation-delay-100">
         $ whoami
       </p>
 
-      <div className="flex items-center gap-6 mb-4 fade-in-up animation-delay-200">
-        <img
-          src="/images/illustration.png"
-          alt="Arath Jimenez"
-          className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover flex-shrink-0"
-          style={{ objectPosition: '50% 30%' }}
+      <h1 className="t-display mb-4 fade-in-up animation-delay-200">
+        Arath Jimenez<span className="text-accent">.</span>
+        <span
+          aria-hidden="true"
+          className="inline-block bg-accent ml-2 animate-blink"
+          style={{ width: '0.08em', height: '0.85em', verticalAlign: '-0.08em' }}
         />
-        <h1 className="t-display">
-          Arath Jimenez<span className="text-accent">.</span>
-          <span
-            aria-hidden="true"
-            className="inline-block bg-accent ml-3 animate-blink"
-            style={{ width: '0.08em', height: '0.85em', verticalAlign: '-0.08em' }}
-          />
-        </h1>
-      </div>
+      </h1>
 
       <p className="t-lead max-w-md mb-10 fade-in-up animation-delay-300">
-        Software engineer. Finance enthusiast.
+        <span className="text-accent">Software engineer</span>. Finance enthusiast.
         <br />
         Powered by espresso <span className="text-accent">☕</span>
       </p>
@@ -35,10 +27,12 @@ export default function Home() {
       <div className="max-w-xl space-y-5 mb-10 fade-in-up animation-delay-400">
         <p className="t-body">
           Hi! I'm Arath, a software engineer with 7+ years in the industry.
-          I'm a generalist who loves solving problems and learning new things.
+          I'm a <span className="text-accent">generalist</span> who loves solving problems and learning new things.
         </p>
         <p className="t-body">
-          Currently an Engineering Manager at Keep, leading the Capital team.
+          Currently an Engineering Manager at{' '}
+          <a href="https://trykeep.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-hover transition-colors">Keep</a>,
+          leading the Capital team.
           I believe technology should be easy and accessible for everyone,
           which fuels my focus on user experience, accessibility, and design
           in every project.

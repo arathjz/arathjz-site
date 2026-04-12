@@ -9,14 +9,14 @@
     --color-surface: 20 25 40;
     --color-hairline: 30 35 50;
 
-    --color-ink: 232 226 212;
-    --color-ink-soft: 200 192 175;
-    --color-ink-faint: 155 147 135;
-    --color-ink-mute: 175 170 162;
-    --color-ink-dim: 125 118 108;
+    --color-ink: 248 245 238;
+    --color-ink-soft: 230 225 215;
+    --color-ink-faint: 195 188 178;
+    --color-ink-mute: 215 208 200;
+    --color-ink-dim: 175 168 158;
 
-    --color-accent: 232 168 56;
-    --color-accent-hover: 255 190 80;
+    --color-accent: 74 222 128;
+    --color-accent-hover: 110 240 160;
     --color-terminal: 74 222 128;
 
     --color-line: 50 55 70;
@@ -30,15 +30,15 @@
     --color-surface: 237 230 216;
     --color-hairline: 225 218 204;
 
-    --color-ink: 38 34 30;
-    --color-ink-soft: 80 74 66;
-    --color-ink-faint: 120 114 104;
-    --color-ink-mute: 100 94 86;
-    --color-ink-dim: 140 134 126;
+    --color-ink: 24 20 16;
+    --color-ink-soft: 42 38 32;
+    --color-ink-faint: 75 68 58;
+    --color-ink-mute: 58 52 44;
+    --color-ink-dim: 95 88 78;
 
-    --color-accent: 180 120 18;
-    --color-accent-hover: 150 100 10;
-    --color-terminal: 22 120 60;
+    --color-accent: 22 160 72;
+    --color-accent-hover: 16 130 56;
+    --color-terminal: 22 160 72;
 
     --color-line: 210 204 194;
     --color-line-dim: 200 194 184;
@@ -111,12 +111,12 @@
   }
 
   /* ── PROSE (blog markdown) ─────────────────────── */
-  .prose h1 { @apply font-serif text-3xl text-ink mb-6 mt-10 leading-snug; }
+  .prose h1 { @apply font-serif text-3xl text-accent mb-6 mt-10 leading-snug; }
   .prose h2 { @apply font-serif text-2xl text-ink mb-4 mt-8 leading-snug; }
   .prose h3 { @apply font-serif text-xl text-ink mb-3 mt-6 leading-snug; }
   .prose p { @apply font-serif text-lg text-ink-soft leading-relaxed mb-5; }
   .prose a { @apply text-accent hover:text-accent-hover underline-offset-2 hover:underline transition-colors; }
-  .prose strong { @apply text-ink font-semibold; }
+  .prose strong { @apply text-accent font-semibold; }
   .prose em { @apply italic; }
   .prose ul { @apply list-disc pl-6 mb-5 space-y-2 text-ink-soft font-serif text-lg; }
   .prose ol { @apply list-decimal pl-6 mb-5 space-y-2 text-ink-soft font-serif text-lg; }

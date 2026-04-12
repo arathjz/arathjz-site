@@ -41,7 +41,7 @@ export default function BlogPost() {
       </Link>
 
       <header className="mb-10">
-        <h1 className="t-headline mb-3">{post.title}</h1>
+        <h1 className="t-headline text-accent mb-3">{post.title}</h1>
         <div className="flex items-center gap-4">
           <span className="t-caption">{formatDate(post.date)}</span>
           {post.tags.length > 0 && (

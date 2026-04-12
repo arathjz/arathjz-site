@@ -14,7 +14,7 @@ I'll be sharing thoughts on **software engineering**, building products, and thi
 
 ### What to expect
 
-- Technical posts about frontend, backend, and everything in between
+- Technical posts about engineering, AI, and everything in between
 - Reflections on engineering management
 - Occasional coffee recommendations ☕
 
