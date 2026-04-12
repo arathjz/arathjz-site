@@ -5,46 +5,46 @@
 @layer base {
   :root {
     /* ── CANVAS / SURFACE ───────────────────────────── */
-    --color-canvas: #0d0d0d;
-    --color-surface: #1a1a1a;
-    --color-hairline: #1c1c1c;
+    --color-canvas: 13 13 13;
+    --color-surface: 26 26 26;
+    --color-hairline: 28 28 28;
 
     /* ── INK (text) ──────────────────────────────────── */
-    --color-ink: #f2ead8;
-    --color-ink-soft: #dccfb5;
-    --color-ink-faint: #bdb098;
-    --color-ink-mute: #cfcfcf;
-    --color-ink-dim: #968a78;
+    --color-ink: 242 234 216;
+    --color-ink-soft: 220 207 181;
+    --color-ink-faint: 189 176 152;
+    --color-ink-mute: 207 207 207;
+    --color-ink-dim: 150 138 120;
 
     /* ── ACCENT / BRAND ─────────────────────────────── */
-    --color-accent: #f0b648;
-    --color-accent-hover: #ffcb6a;
-    --color-terminal: #6ee29a;
+    --color-accent: 240 182 72;
+    --color-accent-hover: 255 203 106;
+    --color-terminal: 110 226 154;
 
     /* ── LINES / BORDERS ────────────────────────────── */
-    --color-line: #4a4a4a;
-    --color-line-dim: #5a5a5a;
-    --color-line-hover: #8a8a8a;
+    --color-line: 74 74 74;
+    --color-line-dim: 90 90 90;
+    --color-line-hover: 138 138 138;
   }
 
   .light {
-    --color-canvas: #faf8f5;
-    --color-surface: #f0ece6;
-    --color-hairline: #e0dbd3;
+    --color-canvas: 250 248 245;
+    --color-surface: 240 236 230;
+    --color-hairline: 224 219 211;
 
-    --color-ink: #1a1a1a;
-    --color-ink-soft: #4a4540;
-    --color-ink-faint: #7a756e;
-    --color-ink-mute: #5a5a5a;
-    --color-ink-dim: #8a8580;
+    --color-ink: 26 26 26;
+    --color-ink-soft: 74 69 64;
+    --color-ink-faint: 122 117 110;
+    --color-ink-mute: 90 90 90;
+    --color-ink-dim: 138 133 128;
 
-    --color-accent: #c8941a;
-    --color-accent-hover: #a67a10;
-    --color-terminal: #1a8a4a;
+    --color-accent: 200 148 26;
+    --color-accent-hover: 166 122 16;
+    --color-terminal: 26 138 74;
 
-    --color-line: #d0cbc3;
-    --color-line-dim: #c0bbb3;
-    --color-line-hover: #8a8580;
+    --color-line: 208 203 195;
+    --color-line-dim: 192 187 179;
+    --color-line-hover: 138 133 128;
   }
 
   html {
@@ -59,13 +59,13 @@
   }
 
   body {
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-ink));
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
-    color: var(--color-ink);
+    background-color: rgb(var(--color-accent) / 0.25);
+    color: rgb(var(--color-ink));
   }
 }
 

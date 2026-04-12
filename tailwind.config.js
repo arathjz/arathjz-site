@@ -7,29 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        canvas: 'var(--color-canvas)',
-        surface: 'var(--color-surface)',
-        hairline: 'var(--color-hairline)',
+        canvas: 'rgb(var(--color-canvas) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        hairline: 'rgb(var(--color-hairline) / <alpha-value>)',
 
         ink: {
-          DEFAULT: 'var(--color-ink)',
-          soft: 'var(--color-ink-soft)',
-          faint: 'var(--color-ink-faint)',
-          mute: 'var(--color-ink-mute)',
-          dim: 'var(--color-ink-dim)',
+          DEFAULT: 'rgb(var(--color-ink) / <alpha-value>)',
+          soft: 'rgb(var(--color-ink-soft) / <alpha-value>)',
+          faint: 'rgb(var(--color-ink-faint) / <alpha-value>)',
+          mute: 'rgb(var(--color-ink-mute) / <alpha-value>)',
+          dim: 'rgb(var(--color-ink-dim) / <alpha-value>)',
         },
 
         accent: {
-          DEFAULT: 'var(--color-accent)',
-          hover: 'var(--color-accent-hover)',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          hover: 'rgb(var(--color-accent-hover) / <alpha-value>)',
         },
 
-        terminal: 'var(--color-terminal)',
+        terminal: 'rgb(var(--color-terminal) / <alpha-value>)',
 
         line: {
-          DEFAULT: 'var(--color-line)',
-          dim: 'var(--color-line-dim)',
-          hover: 'var(--color-line-hover)',
+          DEFAULT: 'rgb(var(--color-line) / <alpha-value>)',
+          dim: 'rgb(var(--color-line-dim) / <alpha-value>)',
+          hover: 'rgb(var(--color-line-hover) / <alpha-value>)',
         },
       },
       fontFamily: {
