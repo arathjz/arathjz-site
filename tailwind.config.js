@@ -7,29 +7,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        canvas: '#0d0d0d',
-        surface: '#1a1a1a',
-        hairline: '#1c1c1c',
+        canvas: 'var(--color-canvas)',
+        surface: 'var(--color-surface)',
+        hairline: 'var(--color-hairline)',
 
         ink: {
-          DEFAULT: '#f2ead8',
-          soft: '#dccfb5',
-          faint: '#bdb098',
-          mute: '#cfcfcf',
-          dim: '#968a78',
+          DEFAULT: 'var(--color-ink)',
+          soft: 'var(--color-ink-soft)',
+          faint: 'var(--color-ink-faint)',
+          mute: 'var(--color-ink-mute)',
+          dim: 'var(--color-ink-dim)',
         },
 
         accent: {
-          DEFAULT: '#f0b648',
-          hover: '#ffcb6a',
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
         },
 
-        terminal: '#6ee29a',
+        terminal: 'var(--color-terminal)',
 
         line: {
-          DEFAULT: '#4a4a4a',
-          dim: '#5a5a5a',
-          hover: '#8a8a8a',
+          DEFAULT: 'var(--color-line)',
+          dim: 'var(--color-line-dim)',
+          hover: 'var(--color-line-hover)',
         },
       },
       fontFamily: {
