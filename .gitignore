@@ -6,6 +6,7 @@ docs/
 
 # Remix
 /build
+/public/build
 .cache
 
 # Environment

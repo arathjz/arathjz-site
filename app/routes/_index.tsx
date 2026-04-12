@@ -21,6 +21,7 @@ export default function Home() {
   const [firstVisit, setFirstVisit] = useState(false);
   const [nameDone, setNameDone] = useState(false);
   const [terminalActive, setTerminalActive] = useState(false);
+  const [mobileHint, setMobileHint] = useState(false);
   const nameRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -36,6 +37,8 @@ export default function Home() {
   const onNameComplete = useCallback(() => setNameDone(true), []);
 
   const activateTerminal = useCallback(() => {
+    const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (isMobile) return;
     setTerminalActive(true);
     setTimeout(() => nameRef.current?.focus(), 0);
   }, []);
@@ -75,6 +78,12 @@ export default function Home() {
                 suppressContentEditableWarning
                 onClick={() => {
                   if (!terminalActive) {
+                    const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+                    if (isMobile) {
+                      setMobileHint(true);
+                      setTimeout(() => setMobileHint(false), 3000);
+                      return;
+                    }
                     activateTerminal();
                     setTimeout(() => {
                       if (nameRef.current) {
@@ -124,6 +133,20 @@ export default function Home() {
                       className="inline-block bg-accent ml-2 animate-blink"
                       style={{ width: "0.08em", height: "0.85em", verticalAlign: "-0.08em" }}
                     />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+              <AnimatePresence>
+                {mobileHint && (
+                  <motion.span
+                    key="mobile-hint"
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="block font-mono text-xs text-ink-faint mt-2 font-normal"
+                  >
+                    this easter egg is desktop-only — feel free to explore the rest of the site!
                   </motion.span>
                 )}
               </AnimatePresence>
