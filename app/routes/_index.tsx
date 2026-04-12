@@ -1,6 +1,10 @@
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useLoaderData, Link } from "@remix-run/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { getRecentPosts } from "~/lib/posts.server";
 import RecentPosts from "~/components/RecentPosts";
+import Typewriter from "~/components/Typewriter";
+import Terminal from "~/components/Terminal";
 
 const EMAIL = "me@arathjz.com";
 
@@ -9,30 +13,131 @@ export async function loader() {
   return { posts };
 }
 
+const INTRO_KEY = "intro-played";
+
 export default function Home() {
   const { posts } = useLoaderData<typeof loader>();
+  const [firstVisit, setFirstVisit] = useState(false);
+  const [nameDone, setNameDone] = useState(false);
+  const [terminalActive, setTerminalActive] = useState(false);
+  const nameRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem(INTRO_KEY)) {
+      setFirstVisit(true);
+      sessionStorage.setItem(INTRO_KEY, "1");
+    } else {
+      setNameDone(true);
+    }
+  }, []);
+
+  const onNameComplete = useCallback(() => setNameDone(true), []);
+
+  const activateTerminal = useCallback(() => {
+    setTerminalActive(true);
+    setTimeout(() => nameRef.current?.focus(), 0);
+  }, []);
+
+  const deactivateTerminal = useCallback(() => {
+    setTerminalActive(false);
+    nameRef.current?.blur();
+  }, []);
 
   return (
     <div className="flex-1 flex flex-col justify-center page-container pt-20 pb-8">
-      <p className="t-prompt mb-7 fade-in-up animation-delay-100">$ whoami</p>
+      <p className="t-prompt mb-7">
+        {firstVisit ? <Typewriter text="$ whoami" speed={80} /> : "$ whoami"}
+      </p>
 
-      <h1 className="t-display mb-4 fade-in-up animation-delay-200">
-        Arath Jimenez<span className="text-accent">.</span>
-        <span
-          aria-hidden="true"
-          className="inline-block bg-accent ml-2 animate-blink"
-          style={{ width: "0.08em", height: "0.85em", verticalAlign: "-0.08em" }}
+      <div className="mb-4">
+        <Terminal
+          nameRef={nameRef}
+          active={terminalActive}
+          onActivate={activateTerminal}
+          onDeactivate={deactivateTerminal}
         />
-      </h1>
+        <h1 className="t-display">
+          {firstVisit && !nameDone ? (
+            <Typewriter
+              text="Arath Jimenez."
+              speed={45}
+              startDelay={800}
+              showCursorAfter
+              onComplete={onNameComplete}
+            />
+          ) : (
+            <>
+              <span
+                ref={nameRef}
+                contentEditable={terminalActive}
+                suppressContentEditableWarning
+                onClick={() => {
+                  if (!terminalActive) {
+                    activateTerminal();
+                    setTimeout(() => {
+                      if (nameRef.current) {
+                        nameRef.current.textContent = "";
+                        nameRef.current.focus();
+                      }
+                    }, 0);
+                  }
+                }}
+                className={`outline-none transition-all duration-300 ${
+                  terminalActive
+                    ? "caret-transparent border-b border-dashed border-accent/30 text-xl md:text-2xl"
+                    : "cursor-text border-b border-dashed border-transparent hover:border-accent/30"
+                }`}
+              >
+                Arath Jimenez
+              </span>
+              <AnimatePresence mode="wait">
+                {terminalActive ? (
+                  <motion.span
+                    key="terminal"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="inline-block bg-accent animate-blink text-xl md:text-2xl"
+                      style={{ width: "1.5px", height: "1.2em", verticalAlign: "-0.15em" }}
+                    />
+                    <span className="block font-mono text-xs text-ink-faint mt-2 font-normal">
+                      type help + enter for commands · esc to exit
+                    </span>
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="name"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <span className="text-accent">.</span>
+                    <span
+                      aria-hidden="true"
+                      className="inline-block bg-accent ml-2 animate-blink"
+                      style={{ width: "0.08em", height: "0.85em", verticalAlign: "-0.08em" }}
+                    />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </>
+          )}
+        </h1>
+      </div>
 
-      <p className="t-lead max-w-md mb-10 fade-in-up animation-delay-300">
+      <p className="t-lead max-w-md mb-10">
         <span className="text-accent">Software engineer</span>. Finance
         enthusiast.
         <br />
         Powered by coffee <span className="text-accent">☕</span>
       </p>
 
-      <div className="max-w-xl space-y-5 mb-10 fade-in-up animation-delay-400">
+      <div className="max-w-xl space-y-5 mb-10">
         <p className="t-body">
           Hi! I&apos;m Arath, a software engineer who believes great
           software starts with{" "}
@@ -63,7 +168,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="fade-in-up animation-delay-500">
+      <div>
         <p className="font-mono text-sm text-ink-faint mb-4">get in touch</p>
         <a
           href={`mailto:${EMAIL}`}
@@ -71,12 +176,12 @@ export default function Home() {
         >
           <span className="text-terminal opacity-80">$</span>
           <span className="border-b border-accent/30 group-hover:border-accent transition-colors pb-0.5">
-            {EMAIL}
+            <Typewriter text={EMAIL} speed={90} />
           </span>
         </a>
       </div>
 
-      <div className="mt-12 fade-in-up animation-delay-600">
+      <div className="mt-12">
         <RecentPosts posts={posts} />
       </div>
     </div>

@@ -7,7 +7,7 @@ import {
   Link,
   useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction, MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import ThemeToggle from "~/components/ThemeToggle";
 import stylesheet from "~/index.css?url";
@@ -28,12 +28,18 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => [
   { title: "Arath Jimenez" },
-  { name: "description", content: "Arath Jimenez — Software Engineer" },
+  {
+    name: "description",
+    content: "Software engineer. Engineering Manager. Fintech. Coffee.",
+  },
   { property: "og:title", content: "Arath Jimenez" },
   {
     property: "og:description",
-    content: "Software engineer. Finance enthusiast. Coffee obsessed.",
+    content: "Software engineer. Engineering Manager. Fintech. Coffee.",
   },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://arathjz.com" },
+  { property: "og:image", content: "https://arathjz.com/og-image.png" },
 ];
 
 export async function loader() {
@@ -87,13 +93,13 @@ export default function App() {
             <nav className="flex items-center gap-5">
               <Link
                 to="/about"
-                className="t-nav text-ink-soft hover:text-ink transition-colors"
+                className="t-nav text-ink-soft hover:text-ink transition-colors nav-cursor"
               >
                 about
               </Link>
               <Link
                 to="/blog"
-                className="t-nav text-ink-soft hover:text-ink transition-colors"
+                className="t-nav text-ink-soft hover:text-ink transition-colors nav-cursor"
               >
                 blog
               </Link>

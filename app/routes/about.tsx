@@ -1,20 +1,21 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "@remix-run/react";
+import { AnimatePresence, motion } from "framer-motion";
+import ScrollReveal from "~/components/ScrollReveal";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
   { title: "About — Arath Jimenez" },
   {
     name: "description",
-    content:
-      "Software engineer with 8+ years of experience. Passionate about user experience, accessibility, and design.",
+    content: "Software engineer. Engineering Manager. Fintech. Coffee.",
   },
   { property: "og:title", content: "About — Arath Jimenez" },
   {
     property: "og:description",
-    content:
-      "Software engineer with 8+ years of experience. Passionate about user experience, accessibility, and design.",
+    content: "Software engineer. Engineering Manager. Fintech. Coffee.",
   },
+  { property: "og:image", content: "https://arathjz.com/og-image.png" },
 ];
 
 const recommendations = [
@@ -167,12 +168,12 @@ export default function About() {
 
   return (
     <div className="page-container pt-28 pb-16 min-h-screen">
-      <p className="t-prompt mb-6 fade-in-up animation-delay-100">
+      <p className="t-prompt mb-6">
         $ cat ~/about.md
       </p>
 
       {/* Intro */}
-      <div className="max-w-2xl mb-20 fade-in-up animation-delay-200">
+      <div className="max-w-2xl mb-20">
         <h1 className="t-headline text-accent mb-6">About me</h1>
         <div className="space-y-5">
           <p className="t-body">
@@ -193,25 +194,34 @@ export default function About() {
       </div>
 
       {/* Recommendations */}
-      <section className="mb-20 fade-in-up animation-delay-300">
+      <ScrollReveal className="mb-20">
         <p className="font-mono text-sm text-ink-faint mb-8 uppercase tracking-widest">
           What people say
         </p>
         <div className="max-w-2xl">
           <div className="relative min-h-[180px]">
-            <blockquote className="border-l-2 border-accent pl-6">
-              <p className="font-serif text-lg text-ink-soft leading-relaxed italic mb-4">
-                &ldquo;{recommendations[carousel.index].text}&rdquo;
-              </p>
-              <footer>
-                <span className="font-mono text-sm text-accent">
-                  {recommendations[carousel.index].author}
-                </span>
-                <span className="font-mono text-xs text-ink-faint ml-2">
-                  — {recommendations[carousel.index].role}
-                </span>
-              </footer>
-            </blockquote>
+            <AnimatePresence mode="wait">
+              <motion.blockquote
+                key={carousel.index}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="border-l-2 border-accent pl-6"
+              >
+                <p className="font-serif text-lg text-ink-soft leading-relaxed italic mb-4">
+                  &ldquo;{recommendations[carousel.index].text}&rdquo;
+                </p>
+                <footer>
+                  <span className="font-mono text-sm text-accent">
+                    {recommendations[carousel.index].author}
+                  </span>
+                  <span className="font-mono text-xs text-ink-faint ml-2">
+                    — {recommendations[carousel.index].role}
+                  </span>
+                </footer>
+              </motion.blockquote>
+            </AnimatePresence>
           </div>
 
           <div className="flex items-center gap-4 mt-6">
@@ -245,67 +255,80 @@ export default function About() {
             </button>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* Experience */}
-      <section className="fade-in-up animation-delay-400">
+      <ScrollReveal>
         <p className="font-mono text-sm text-ink-faint mb-8 uppercase tracking-widest">
-          Where I&apos;ve worked
+          Experience
         </p>
         <div className="space-y-10 max-w-2xl">
           {experience.map((company, i) => (
-            <div key={i} className="flex gap-4">
-              <div className="flex flex-col items-center pt-2">
-                <div
-                  className={`w-2.5 h-2.5 rounded-full shrink-0 ${
-                    company.roles[0].current ? "bg-accent" : "bg-line-dim"
-                  }`}
-                />
-                {i < experience.length - 1 && (
-                  <div className="w-px flex-1 bg-line-dim mt-2" />
-                )}
-              </div>
-              <div className="pb-2 flex-1">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-                  <span className="font-mono text-base text-ink">
-                    {company.company}
-                  </span>
-                  <span className="font-mono text-xs text-ink-faint ml-auto">
-                    {company.period}
-                  </span>
+            <ScrollReveal key={i} delay={i * 0.08}>
+              <div className="flex gap-4">
+                <div className="flex flex-col items-center pt-2">
+                  <motion.div
+                    className={`w-2.5 h-2.5 rounded-full shrink-0 ${
+                      company.roles[0].current ? "bg-accent" : "bg-line-dim"
+                    }`}
+                    initial={company.roles[0].current ? { scale: 1 } : undefined}
+                    animate={
+                      company.roles[0].current
+                        ? { scale: [1, 1.4, 1] }
+                        : undefined
+                    }
+                    transition={
+                      company.roles[0].current
+                        ? { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                        : undefined
+                    }
+                  />
+                  {i < experience.length - 1 && (
+                    <div className="w-px flex-1 bg-line-dim mt-2" />
+                  )}
                 </div>
-                <div className="space-y-6">
-                  {company.roles.map((role, j) => (
-                    <div key={j}>
-                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
-                        <span className="font-serif text-ink-soft">
-                          {role.title}
-                        </span>
-                        <span className="font-mono text-xs text-ink-faint">
-                          {role.period}
-                        </span>
+                <div className="pb-2 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                    <span className="font-mono text-base text-ink">
+                      {company.company}
+                    </span>
+                    <span className="font-mono text-xs text-ink-faint ml-auto">
+                      {company.period}
+                    </span>
+                  </div>
+                  <div className="space-y-6">
+                    {company.roles.map((role, j) => (
+                      <div key={j}>
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                          <span className="font-serif text-ink-soft">
+                            {role.title}
+                          </span>
+                          <span className="font-mono text-xs text-ink-faint">
+                            {role.period}
+                          </span>
+                        </div>
+                        <p className="font-serif text-sm text-ink-dim leading-relaxed">
+                          {role.description}
+                        </p>
                       </div>
-                      <p className="font-serif text-sm text-ink-dim leading-relaxed">
-                        {role.description}
-                      </p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* CTA */}
-      <div className="mt-16 fade-in-up animation-delay-500">
+      <ScrollReveal className="mt-16">
         <Link
           to="/"
           className="t-nav text-ink-faint hover:text-accent transition-colors"
         >
           &larr; back home
         </Link>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }

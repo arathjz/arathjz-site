@@ -19,12 +19,12 @@ export default function RecentPosts({ posts }: { posts: Post[] }) {
           <li key={post.slug}>
             <Link
               to={`/blog/${post.slug}`}
-              className="group flex items-baseline gap-3"
+              className="group flex items-baseline gap-3 py-2 -mx-3 px-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface/50"
             >
-              <span className="text-terminal opacity-60 font-mono text-sm">
+              <span className="text-terminal opacity-60 font-mono text-sm transition-opacity duration-200 group-hover:opacity-100">
                 &gt;
               </span>
-              <span className="font-serif text-ink-soft group-hover:text-accent transition-colors">
+              <span className="font-serif text-ink-soft group-hover:text-accent transition-colors duration-200">
                 {post.title}
               </span>
               <span className="t-caption ml-auto hidden sm:inline">
