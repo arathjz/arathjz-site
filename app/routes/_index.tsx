@@ -17,6 +17,7 @@ const INTRO_KEY = "intro-played";
 
 export default function Home() {
   const { posts } = useLoaderData<typeof loader>();
+  const [ready, setReady] = useState(false);
   const [firstVisit, setFirstVisit] = useState(false);
   const [nameDone, setNameDone] = useState(false);
   const [terminalActive, setTerminalActive] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
     } else {
       setNameDone(true);
     }
+    setReady(true);
   }, []);
 
   const onNameComplete = useCallback(() => setNameDone(true), []);
@@ -44,7 +46,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col justify-center page-container pt-20 pb-8">
+    <div className={`flex-1 flex flex-col justify-center page-container pt-20 pb-8 transition-opacity duration-100 ${ready ? "opacity-100" : "opacity-0"}`}>
       <p className="t-prompt mb-7">
         {firstVisit ? <Typewriter text="$ whoami" speed={80} /> : "$ whoami"}
       </p>
