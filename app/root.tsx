@@ -6,6 +6,7 @@ import {
   ScrollRestoration,
   Link,
   useLoaderData,
+  useLocation,
 } from "@remix-run/react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -50,6 +51,7 @@ export async function loader() {
 
 export default function App() {
   const { gaTrackingId } = useLoaderData<typeof loader>();
+  const { pathname } = useLocation();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -93,13 +95,17 @@ export default function App() {
             <nav className="flex items-center gap-5">
               <Link
                 to="/about"
-                className="t-nav text-ink-soft hover:text-ink transition-colors nav-cursor"
+                className={`t-nav transition-colors nav-cursor ${
+                  pathname.startsWith("/about") ? "text-ink nav-cursor-active" : "text-ink-soft hover:text-ink"
+                }`}
               >
                 about
               </Link>
               <Link
                 to="/blog"
-                className="t-nav text-ink-soft hover:text-ink transition-colors nav-cursor"
+                className={`t-nav transition-colors nav-cursor ${
+                  pathname.startsWith("/blog") ? "text-ink nav-cursor-active" : "text-ink-soft hover:text-ink"
+                }`}
               >
                 blog
               </Link>

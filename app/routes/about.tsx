@@ -177,8 +177,7 @@ export default function About() {
         <h1 className="t-headline text-accent mb-6">About me</h1>
         <div className="space-y-5">
           <p className="t-body">
-            I&apos;ve been building software since 2018 — starting as the second
-            engineer at a small startup in Guadalajara, Mexico, and growing
+            I&apos;ve been building software since 2018, growing
             through roles across fintech, real estate, logistics, and
             developer tools. I currently work in fintech and hold a
             bachelor&apos;s in Finance and Banking, which gives me a unique
