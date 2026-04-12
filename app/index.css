@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Dark: "Deep Space" — blue-tinted dark with warm accents ── */
+    --color-canvas: 11 14 23;
+    --color-surface: 20 25 40;
+    --color-hairline: 30 35 50;
+
+    --color-ink: 248 245 238;
+    --color-ink-soft: 230 225 215;
+    --color-ink-faint: 195 188 178;
+    --color-ink-mute: 215 208 200;
+    --color-ink-dim: 175 168 158;
+
+    --color-accent: 74 222 128;
+    --color-accent-hover: 110 240 160;
+    --color-terminal: 74 222 128;
+
+    --color-line: 50 55 70;
+    --color-line-dim: 60 65 80;
+    --color-line-hover: 100 105 120;
+  }
+
+  .light {
+    /* ── Light: "Linen" — warm paper with rich contrast ── */
+    --color-canvas: 247 242 232;
+    --color-surface: 237 230 216;
+    --color-hairline: 225 218 204;
+
+    --color-ink: 24 20 16;
+    --color-ink-soft: 42 38 32;
+    --color-ink-faint: 75 68 58;
+    --color-ink-mute: 58 52 44;
+    --color-ink-dim: 95 88 78;
+
+    --color-accent: 22 160 72;
+    --color-accent-hover: 16 130 56;
+    --color-terminal: 22 160 72;
+
+    --color-line: 210 204 194;
+    --color-line-dim: 200 194 184;
+    --color-line-hover: 140 134 126;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: rgb(var(--color-canvas));
+    color: rgb(var(--color-ink));
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.25);
+    color: rgb(var(--color-ink));
+  }
+}
+
+@layer components {
+  /* ── TYPOGRAPHY TOKENS ──────────────────────────── */
+  .t-display {
+    @apply font-mono font-bold leading-[1.05] text-ink;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  .t-headline {
+    @apply font-serif text-3xl md:text-4xl text-ink leading-snug;
+  }
+
+  .t-lead {
+    @apply font-serif text-lg md:text-xl text-ink-soft leading-relaxed;
+  }
+
+  .t-body {
+    @apply font-serif text-lg text-ink-soft leading-relaxed;
+  }
+
+  .t-label {
+    @apply font-mono text-xs uppercase tracking-widest;
+  }
+
+  .t-section-label {
+    @apply t-label text-terminal opacity-80;
+  }
+
+  .t-prompt {
+    @apply font-mono text-sm text-terminal;
+  }
+
+  .t-nav {
+    @apply font-mono text-sm tracking-wide transition-colors;
+  }
+
+  .t-caption {
+    @apply font-mono text-xs text-ink-faint;
+  }
+
+  .page-container {
+    @apply px-6 md:px-12 lg:px-28 max-w-7xl mx-auto;
+  }
+
+  /* ── PROSE (blog markdown) ─────────────────────── */
+  .prose h1 { @apply font-serif text-3xl text-accent mb-6 mt-10 leading-snug; }
+  .prose h2 { @apply font-serif text-2xl text-ink mb-4 mt-8 leading-snug; }
+  .prose h3 { @apply font-serif text-xl text-ink mb-3 mt-6 leading-snug; }
+  .prose p { @apply font-serif text-lg text-ink-soft leading-relaxed mb-5; }
+  .prose a { @apply text-accent hover:text-accent-hover underline-offset-2 hover:underline transition-colors; }
+  .prose strong { @apply text-accent font-semibold; }
+  .prose em { @apply italic; }
+  .prose ul { @apply list-disc pl-6 mb-5 space-y-2 text-ink-soft font-serif text-lg; }
+  .prose ol { @apply list-decimal pl-6 mb-5 space-y-2 text-ink-soft font-serif text-lg; }
+  .prose li { @apply leading-relaxed; }
+  .prose blockquote { @apply border-l-2 border-accent pl-4 italic text-ink-faint mb-5; }
+  .prose code { @apply font-mono text-sm bg-surface px-1.5 py-0.5 rounded; }
+  .prose pre { @apply bg-surface rounded-lg p-4 mb-5 overflow-x-auto; }
+  .prose pre code { @apply bg-transparent p-0; }
+  .prose img { @apply max-w-full rounded-lg my-6; }
+  .prose hr { @apply border-hairline my-8; }
+
+  /* ── ANIMATIONS ─────────────────────────────────── */
+  .fade-in-up {
+    @apply opacity-0 animate-fade-up animation-fill-forwards;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+  .animation-fill-forwards { animation-fill-mode: forwards; }
+}
