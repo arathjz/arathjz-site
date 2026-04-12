@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllPosts, getAllTags } from '../lib/posts'
 
@@ -6,6 +6,11 @@ export default function Blog() {
   const posts = getAllPosts()
   const tags = getAllTags()
   const [activeTag, setActiveTag] = useState<string | null>(null)
+
+  useEffect(() => {
+    document.title = 'Blog — Arath Jimenez'
+    return () => { document.title = 'Arath Jimenez' }
+  }, [])
 
   const filtered = activeTag
     ? posts.filter(p => p.tags.includes(activeTag))

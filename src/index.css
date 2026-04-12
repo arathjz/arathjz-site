@@ -4,47 +4,45 @@
 
 @layer base {
   :root {
-    /* ── CANVAS / SURFACE ───────────────────────────── */
-    --color-canvas: 13 13 13;
-    --color-surface: 26 26 26;
-    --color-hairline: 28 28 28;
+    /* ── Dark: "Deep Space" — blue-tinted dark with warm accents ── */
+    --color-canvas: 11 14 23;
+    --color-surface: 20 25 40;
+    --color-hairline: 30 35 50;
 
-    /* ── INK (text) ──────────────────────────────────── */
-    --color-ink: 242 234 216;
-    --color-ink-soft: 220 207 181;
-    --color-ink-faint: 189 176 152;
-    --color-ink-mute: 207 207 207;
-    --color-ink-dim: 150 138 120;
+    --color-ink: 232 226 212;
+    --color-ink-soft: 200 192 175;
+    --color-ink-faint: 155 147 135;
+    --color-ink-mute: 175 170 162;
+    --color-ink-dim: 125 118 108;
 
-    /* ── ACCENT / BRAND ─────────────────────────────── */
-    --color-accent: 240 182 72;
-    --color-accent-hover: 255 203 106;
-    --color-terminal: 110 226 154;
+    --color-accent: 232 168 56;
+    --color-accent-hover: 255 190 80;
+    --color-terminal: 74 222 128;
 
-    /* ── LINES / BORDERS ────────────────────────────── */
-    --color-line: 74 74 74;
-    --color-line-dim: 90 90 90;
-    --color-line-hover: 138 138 138;
+    --color-line: 50 55 70;
+    --color-line-dim: 60 65 80;
+    --color-line-hover: 100 105 120;
   }
 
   .light {
-    --color-canvas: 250 248 245;
-    --color-surface: 240 236 230;
-    --color-hairline: 224 219 211;
+    /* ── Light: "Linen" — warm paper with rich contrast ── */
+    --color-canvas: 247 242 232;
+    --color-surface: 237 230 216;
+    --color-hairline: 225 218 204;
 
-    --color-ink: 26 26 26;
-    --color-ink-soft: 74 69 64;
-    --color-ink-faint: 122 117 110;
-    --color-ink-mute: 90 90 90;
-    --color-ink-dim: 138 133 128;
+    --color-ink: 38 34 30;
+    --color-ink-soft: 80 74 66;
+    --color-ink-faint: 120 114 104;
+    --color-ink-mute: 100 94 86;
+    --color-ink-dim: 140 134 126;
 
-    --color-accent: 200 148 26;
-    --color-accent-hover: 166 122 16;
-    --color-terminal: 26 138 74;
+    --color-accent: 180 120 18;
+    --color-accent-hover: 150 100 10;
+    --color-terminal: 22 120 60;
 
-    --color-line: 208 203 195;
-    --color-line-dim: 192 187 179;
-    --color-line-hover: 138 133 128;
+    --color-line: 210 204 194;
+    --color-line-dim: 200 194 184;
+    --color-line-hover: 140 134 126;
   }
 
   html {
@@ -73,7 +71,7 @@
   /* ── TYPOGRAPHY TOKENS ──────────────────────────── */
   .t-display {
     @apply font-mono font-bold leading-[1.05] text-ink;
-    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-size: clamp(2rem, 5vw, 4rem);
   }
 
   .t-headline {

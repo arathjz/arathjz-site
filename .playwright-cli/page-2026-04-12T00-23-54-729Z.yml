@@ -1,0 +1,44 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "~/arathjz" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e6]:
+      - link "blog" [ref=e7] [cursor=pointer]:
+        - /url: /blog
+      - button "Switch to dark mode" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+      - link "GitHub" [ref=e11] [cursor=pointer]:
+        - /url: https://github.com/arathjz
+        - img [ref=e12]
+      - link "LinkedIn" [ref=e14] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/arathjz
+        - img [ref=e15]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - paragraph [ref=e19]: $ whoami
+      - generic [ref=e20]:
+        - img "Arath Jimenez" [ref=e21]
+        - heading "Arath Jimenez." [level=1] [ref=e22]: Arath Jimenez.
+      - paragraph [ref=e24]:
+        - text: Software engineer. Finance enthusiast.
+        - text: Powered by espresso ☕
+      - generic [ref=e25]:
+        - paragraph [ref=e26]: Hi! I'm Arath, a software engineer with 7+ years in the industry. I'm a generalist who loves solving problems and learning new things.
+        - paragraph [ref=e27]: Currently an Engineering Manager at Keep, leading the Capital team. I believe technology should be easy and accessible for everyone, which fuels my focus on user experience, accessibility, and design in every project.
+      - link "$ me@arathjz.com" [ref=e29] [cursor=pointer]:
+        - /url: mailto:me@arathjz.com
+        - generic [ref=e30]: $
+        - generic [ref=e31]: me@arathjz.com
+      - generic [ref=e33]:
+        - paragraph [ref=e34]: recent posts
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "> Hello World Apr 2026" [ref=e37] [cursor=pointer]:
+              - /url: /blog/hello-world
+              - generic [ref=e38]: ">"
+              - generic [ref=e39]: Hello World
+              - generic [ref=e40]: Apr 2026
+        - link "view all →" [ref=e41] [cursor=pointer]:
+          - /url: /blog
+  - contentinfo [ref=e42]:
+    - generic [ref=e43]: © 2026 Arath Jimenez. All rights reserved.

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -6,6 +7,17 @@ import { getPostBySlug } from '../lib/posts'
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
   const post = slug ? getPostBySlug(slug) : undefined
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} — Arath Jimenez`
+      const meta = document.querySelector('meta[name="description"]')
+      if (meta) meta.setAttribute('content', post.description)
+    } else {
+      document.title = 'Post Not Found — Arath Jimenez'
+    }
+    return () => { document.title = 'Arath Jimenez' }
+  }, [post])
 
   if (!post) {
     return (
